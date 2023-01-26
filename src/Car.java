@@ -36,8 +36,20 @@ public class Car {
 	public void setEngineState(boolean engineState) {
 		this.engineState = engineState;
 	}
+	// ** OVERLOADING ** THE setEngineState method
+	public void setEngineState(boolean engineState, int newSpeed) {
+		this.engineState=engineState;
+		speed=newSpeed;
+	}	
 	
+	public void setEngineState() {
+		this.engineState = true;
+	}
+// ------------ Varargs -------------------
 	
+	public void varargsMethod(int ... a) {
+		System.out.println("The length is "+a.length);
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -46,8 +58,16 @@ public class Car {
 		car1.setSpeed(180);
 		car1.setGasoline(10);
 		car1.setEngineState(true);
+		System.out.printf("The car's name is %s, its speed is %d, its gasoline is set to %d and its engine state is %b\n",car1.getName(),car1.getSpeed(),car1.getGasoline(),car1.isEngineState());
+
+		car1.setEngineState(false,50);
+		System.out.printf("The car's name is %s, its speed is %d, its gasoline is set to %d and its engine state is %b\n",car1.getName(),car1.getSpeed(),car1.getGasoline(),car1.isEngineState());
+
+		car1.setEngineState();
+		System.out.printf("The car's name is %s, its speed is %d, its gasoline is set to %d and its engine state is %b\n",car1.getName(),car1.getSpeed(),car1.getGasoline(),car1.isEngineState());
 		
-		System.out.printf("The car's name is %s, its speed is %d, its gasoline is set to %d and its engine state is %b",car1.getName(),car1.getSpeed(),car1.getGasoline(),car1.isEngineState());
+		car1.varargsMethod(12,14,6);
+		car1.varargsMethod();
 	}
 
 }
