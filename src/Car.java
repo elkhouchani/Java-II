@@ -1,5 +1,22 @@
 
 public class Car {
+	//Default Constructor
+	Car(){};
+	//Parameterized Constructor
+		Car(int a){
+			setSpeed(a);		
+		};
+	//Parameterized Constructor
+	Car(String name,int speed, int fuel, boolean running){
+		setName(name);
+		setSpeed(speed);
+		setGasoline(fuel);
+		setEngineState(running);
+	};
+	//Copy Constructor
+	Car(String name){
+		this(name,0,0,false);
+	};
 	
 //	----- name -------
 	private String name;
@@ -53,6 +70,7 @@ public class Car {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Car car1 = new Car();
 		car1.setName("Ford");
 		car1.setSpeed(180);
@@ -68,6 +86,19 @@ public class Car {
 		
 		car1.varargsMethod(12,14,6);
 		car1.varargsMethod();
+		
+		//Testing constructor with one parameter
+		car1= new Car(47);
+		System.out.println(car1.getSpeed());
+		
+		//Testing constructor with multy parameters
+		car1= new Car("Maserati",66,77,true);
+		System.out.println(car1.getName()+" "+car1.getGasoline()+" "+car1.getSpeed()+" "+car1.isEngineState());
+		
+		//Testing a copy constructor 
+		car1= new Car("Bugatti");
+		System.out.println(car1.getName()+" "+car1.getGasoline()+" "+car1.getSpeed()+" "+car1.isEngineState());
+		
 	}
 
 }
