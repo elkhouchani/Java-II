@@ -9,29 +9,48 @@ public class Box {
 		return height;
 	}
 	public void setHeight(double height) {
-		this.height=height;
+		if(height<=0) 
+			System.out.println("Height must be greater than 0");
+		else
+			this.height=height;
 	}
 	
 	public double getWidth() {
 		return width;
 	}
 	public void setWidth(double width) {
-		this.width=width;
+		if(width<=0) 
+			System.out.println("Width must be greater than 0");
+		else
+			this.width=width;
 	}
 	
 	public double getLength() {
 		return length;
 	}
 	public void setLength(double length) {
-		this.length=length;
+		if(length<=0) 
+			System.out.println("Length must be greater than 0");
+		else
+			this.length=length;
 	}
 	
 //	 Exercise 2: Create Constructors
 	
 	Box(double length, double width, double height){
-		this.length=length;
-		this.width=width;
-		this.height=height;
+		if(length<=0 || width<=0||height<=0)
+		{
+			this.length =2;
+			this.height=1;
+			this.width=1;
+		}
+		else 
+		{
+			this.length=length;
+			this.width=width;
+			this.height=height;
+		}
+		
 	}
 	
 	Box(double a){
@@ -55,7 +74,7 @@ public class Box {
 			System.out.println("Invalid values");
 		}
 		else {
-			System.out.printf("Length = %d\nWidth = %d\nHeight = %d\nVolume = %d\nSurface Area = %d",getLength(),getWidth(),getHeight(),getVolume(),getSurfaceArea());
+			System.out.printf("Length = %f\nWidth = %f\nHeight = %f\nVolume = %f\nSurface Area = %f",getLength(),getWidth(),getHeight(),getVolume(),getSurfaceArea());
 		}
 	}
 
