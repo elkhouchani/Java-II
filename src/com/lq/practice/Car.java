@@ -1,3 +1,4 @@
+package com.lq.practice;
 
 public class Car {
 	//Default Constructor
