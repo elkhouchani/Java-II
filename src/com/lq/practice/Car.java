@@ -1,5 +1,7 @@
 package com.lq.practice;
 
+import static java.lang.Math.min;
+
 public class Car {
 	//Default Constructor
 	Car(){};
@@ -19,6 +21,7 @@ public class Car {
 		this(name,0,0,false);
 	};
 	
+	private static final int MAX_SPEED=90;
 //	----- name -------
 	private String name;
 	public String getName() {
@@ -43,7 +46,11 @@ public class Car {
 		return speed;
 	}
 	public void setSpeed(int newSpeed) {
-		speed=newSpeed;
+		//speed=newSpeed;
+//		speed = newSpeed <= MAX_SPEED ? newSpeed : MAX_SPEED;
+//		speed= Math.min(newSpeed,MAX_SPEED);
+		speed= min(newSpeed,MAX_SPEED);
+
 	}
 	
 //	----- engineState -------
